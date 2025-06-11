@@ -1,0 +1,107 @@
+# 🧠 AI-Powered Risk Assessment Report
+
+## 🏢 Fictional Company Overview
+
+- **Company:** CloudNova Inc.  
+- **Industry:** SaaS Collaboration Platform  
+- **Cloud Platform:** AWS (Amazon Web Services)  
+
+### Key Services Used
+
+- **Amazon EC2** – Web application host  
+- **Amazon S3** – File storage  
+- **Amazon RDS** – PostgreSQL database  
+- **AWS IAM** – Access control  
+- **Amazon CloudWatch** – Monitoring  
+
+---
+
+## 🔧 Environment Summary
+
+CloudNova runs a basic cloud-native stack hosted in AWS:
+
+- A public EC2 instance runs the collaboration application.
+- Users upload files to an S3 bucket.
+- All application data is stored in an RDS database.
+- IAM roles are used for resource permissions.
+- There is currently **no defined security framework or DevSecOps automation**.
+
+---
+
+## 🔍 Identified Risks
+
+| ID  | Risk Description                         | Risk Type    |
+|-----|------------------------------------------|--------------|
+| R1  | HTTP instead of HTTPS for EC2 web app    | Technical    |
+| R2  | SSH port (22) open to the world          | Technical    |
+| R3  | Overprivileged IAM roles                 | Compliance   |
+| R4  | No MFA enforced for admin users          | Compliance   |
+| R5  | S3 bucket publicly accessible            | Technical    |
+| R6  | RDS not encrypted at rest                | Technical    |
+| R7  | No automated backups for RDS             | Operational  |
+| R8  | No CloudWatch alarms set                 | Operational  |
+| R9  | No incident response plan                | Operational  |
+| R10 | No audit logging enabled for AWS services| Compliance   |
+
+---
+
+## 🛠️ AI-Assisted Mitigation Strategies
+
+| ID  | Recommended Mitigation                                                                 |
+|-----|------------------------------------------------------------------------------------------|
+| R1  | Enforce HTTPS via SSL/TLS using AWS Certificate Manager                                |
+| R2  | Restrict SSH access to corporate IPs or use AWS Systems Manager Session Manager         |
+| R3  | Implement least privilege principle in IAM policies                                     |
+| R4  | Enable MFA for all IAM users, especially administrators                                 |
+| R5  | Block all public access at the S3 bucket and account level                              |
+| R6  | Use AWS KMS to enable encryption at rest for RDS                                        |
+| R7  | Schedule daily automated RDS snapshots                                                  |
+| R8  | Set up CloudWatch alarms for CPU, memory, disk, and network monitoring                  |
+| R9  | Develop and test an incident response playbook using AWS Systems Manager Automation     |
+| R10 | Enable AWS CloudTrail for auditing and compliance logging                               |
+
+---
+
+## 📊 Sample Risk Register Entry
+
+| Risk ID | Risk                      | Likelihood (1–5) | Impact (1–5) | Risk Level (L × I) | Priority  |
+|---------|---------------------------|------------------|--------------|--------------------|-----------|
+| R1      | HTTP instead of HTTPS     | 4                | 4            | 16 (High)          | 🔴 High   |
+| R2      | SSH exposed to world      | 5                | 3            | 15 (High)          | 🔴 High   |
+| R3      | Overprivileged IAM roles  | 4                | 4            | 16 (High)          | 🔴 High   |
+
+📥 **Download full register in Excel**: [Risk Register Template](#)
+
+---
+
+## 🗺️ Heat Map Categories
+
+| Risk Level Score | Severity  |
+|------------------|-----------|
+| 15–25            | 🔴 High   |
+| 6–14             | 🟡 Medium |
+| 1–5              | 🟢 Low    |
+
+🖼️ **Download visual heat map**: [Heat Map Image](#)
+
+---
+
+## 🧠 Key Takeaways
+
+- Demonstrates hands-on use of AI tools in cybersecurity risk management.
+- Aligns with industry frameworks (NIST, CIS AWS Benchmarks).
+- Provides clear, portfolio-ready deliverables:
+  - ✅ Risk Register (Excel)
+  - ✅ Heat Map (PNG)
+  - ✅ Full Report (Markdown)
+- Adds strategic value to your resume and GitHub projects.
+- Helps articulate GRC (Governance, Risk & Compliance) concepts in interviews.
+
+---
+
+## 📦 Deliverables Recap
+
+- ✅ Risk Register Excel  
+- ✅ Heat Map PNG  
+- ✅ Full Report in Markdown  
+- ✅ AI involvement and rationale explained  
